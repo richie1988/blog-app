@@ -3,16 +3,15 @@ class CreateLikes < ActiveRecord::Migration[6.0]
     create_table :likes do |t|
       t.integer :user_id
       t.integer :post_id
+      t.datetime :created_at
+      t.datetime :updated_at
+
       t.timestamps
     end
 
     add_foreign_key :likes, :users, column: :user_id
     add_foreign_key :likes, :posts, column: :post_id
-
-    # Remove the automatic creation of created_at and updated_at columns
-    change_table :likes do |t|
-      t.remove :created_at
-      t.remove :updated_at
-    end
+    add_index :likes, :user_id
+    add_index :likes, :post_id
   end
 end
