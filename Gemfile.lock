@@ -241,7 +241,7 @@ PLATFORMS
 
 DEPENDENCIES
   bootsnap
-  bundler (= 2.4.22)
+  bundler (= 2.3.26)
   capybara (= 3.39.2)
   debug
   importmap-rails (= 1.2.3)
@@ -259,7 +259,7 @@ DEPENDENCIES
   web-console (= 4.2.1)
 
 RUBY VERSION
-   ruby 3.2.2p53
+   ruby 3.1.2p20
 
 BUNDLED WITH
    2.3.26
