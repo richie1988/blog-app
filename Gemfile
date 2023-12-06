@@ -1,7 +1,7 @@
 source 'https://rubygems.org'
 git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
-ruby '3.1.4'
+ruby '3.1.2'
 
 gem 'bundler', '2.3.26'
 gem 'bootsnap', require: false
@@ -29,3 +29,8 @@ group :test do
   gem 'capybara', '3.39.2'
   gem 'selenium-webdriver', '4.15.0'
 end
+
+group :development, :test do
+  gem 'rspec'
+end
+

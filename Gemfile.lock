@@ -88,6 +88,7 @@ GEM
     debug (1.8.0)
       irb (>= 1.5.0)
       reline (>= 0.3.1)
+    diff-lcs (1.5.0)
     erubi (1.12.0)
     globalid (1.2.1)
       activesupport (>= 6.1)
@@ -182,6 +183,19 @@ GEM
     reline (0.4.1)
       io-console (~> 0.5)
     rexml (3.2.6)
+    rspec (3.12.0)
+      rspec-core (~> 3.12.0)
+      rspec-expectations (~> 3.12.0)
+      rspec-mocks (~> 3.12.0)
+    rspec-core (3.12.2)
+      rspec-support (~> 3.12.0)
+    rspec-expectations (3.12.3)
+      diff-lcs (>= 1.2.0, < 2.0)
+      rspec-support (~> 3.12.0)
+    rspec-mocks (3.12.6)
+      diff-lcs (>= 1.2.0, < 2.0)
+      rspec-support (~> 3.12.0)
+    rspec-support (3.12.1)
     rubocop (1.58.0)
       json (~> 2.3)
       language_server-protocol (>= 3.17.0)
@@ -249,6 +263,7 @@ DEPENDENCIES
   pg (= 1.5.4)
   puma (= 5.6.7)
   rails (= 7.0.8)
+  rspec
   rubocop (= 1.58.0)
   selenium-webdriver (= 4.15.0)
   sprockets-rails (= 3.4.2)
@@ -259,7 +274,7 @@ DEPENDENCIES
   web-console (= 4.2.1)
 
 RUBY VERSION
-   ruby 3.1.4p20
+   ruby 3.1.2p20
 
 BUNDLED WITH
    2.3.26
