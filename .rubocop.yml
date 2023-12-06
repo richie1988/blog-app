@@ -3,6 +3,7 @@ AllCops:
   Exclude:
     - "Guardfile"
     - "Gemfile"
+    - "Gemfile.lock"
     - "Rakefile"
     - "node_modules/**/*"
     - "bin/**/*"
