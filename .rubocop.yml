@@ -1,4 +1,8 @@
+# .rubocop.yml
 AllCops:
+  TargetRubyVersion: 3.2.2
+  inherit_gem:
+    rubocop-config: config/rubocop.yml
   NewCops: enable
   Exclude:
     - "Guardfile"
@@ -7,7 +11,7 @@ AllCops:
     - "Rakefile"
     - "node_modules/**/*"
     - "bin/**/*"
-
+    - "config/rubocop.yml"
   DisplayCopNames: true
 
 Layout/LineLength:
@@ -22,7 +26,6 @@ Metrics/BlockLength:
   IgnoredMethods: ['describe']
   Max: 50
 
-
 Style/Documentation:
   Enabled: false
 Style/ClassAndModuleChildren:
@@ -34,7 +37,7 @@ Style/AndOr:
 Style/DefWithParentheses:
   Enabled: false
 Style/FrozenStringLiteralComment:
-  EnforcedStyle: never
+    EnforcedStyle: never
 
 Layout/HashAlignment:
   EnforcedColonStyle: key
