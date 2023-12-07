@@ -1,9 +1,9 @@
 source 'https://rubygems.org'
 git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
-ruby '3.1.2'
+ruby '3.2.2'
 
-gem 'bundler', '2.3.26'
+gem 'bundler', '2.4.22'
 gem 'bootsnap', require: false
 gem 'importmap-rails', '1.2.3'
 gem 'jbuilder', '2.11.5'
