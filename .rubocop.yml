@@ -7,6 +7,7 @@ AllCops:
     rubocop-config: config/rubocop.yml
   NewCops: enable
   Exclude:
+    - '**/*'
     - "**/.git/**"
     - "**/vendor/**"
     - "db/schema.rb"
