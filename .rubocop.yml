@@ -7,12 +7,18 @@ AllCops:
     rubocop-config: config/rubocop.yml
   NewCops: enable
   Exclude:
-    - "Guardfile"
-    - "Rakefile"
+    - "**/.git/**"
+    - "**/vendor/**"
+    - "db/schema.rb"
     - "node_modules/**/*"
     - "bin/**/*"
-
+    - "config/rubocop.yml"
+    - "Gemfile"
+    - "Gemfile.lock"
   DisplayCopNames: true
+
+Metrics/LineLength:
+  Enabled: false
 
 Layout/LineLength:
   Max: 150
@@ -26,7 +32,6 @@ Metrics/BlockLength:
   IgnoredMethods: ['describe']
   Max: 50
 
-
 Style/Documentation:
   Enabled: false
 Style/ClassAndModuleChildren:
@@ -38,7 +43,7 @@ Style/AndOr:
 Style/DefWithParentheses:
   Enabled: false
 Style/FrozenStringLiteralComment:
-  EnforcedStyle: never
+    EnforcedStyle: never
 
 Layout/HashAlignment:
   EnforcedColonStyle: key
