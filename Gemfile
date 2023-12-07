@@ -1,7 +1,7 @@
 source 'https://rubygems.org'
 git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
-ruby '3.2.2'
+ruby '3.1.2'
 
 gem 'bundler', '2.4.22'
 gem 'bootsnap', require: false
@@ -21,7 +21,7 @@ group :development, :test do
   gem 'rspec'
   gem 'rspec-rails'
   gem 'rubocop', '>= 1.0', '< 2.0'
-  gem 'rubocop-rails', require: false
+  gem 'rubocop-rails'
 end
 
 group :test do
