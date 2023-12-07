@@ -1,4 +1,10 @@
+# .rubocop.yml
+require: rubocop-rails
+
 AllCops:
+  TargetRubyVersion: 3.1.2
+  inherit_gem:
+    rubocop-config: config/rubocop.yml
   NewCops: enable
   Exclude:
     - "Guardfile"
