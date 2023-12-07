@@ -1,7 +1,7 @@
 source 'https://rubygems.org'
 git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
-ruby '3.2.2'
+ruby '3.1.2'
 
 gem 'bundler', '2.4.22'
 gem 'bootsnap', require: false
@@ -32,4 +32,5 @@ group :development, :test do
   gem 'debug', platforms: %i[mri mingw x64_mingw]
   gem 'rspec'
   gem 'rspec-rails'
+  gem 'rubocop-rails'
 end
