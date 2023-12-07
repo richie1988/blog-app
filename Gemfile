@@ -1,16 +1,15 @@
 source 'https://rubygems.org'
 git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
-ruby '3.1.4'
-
-gem 'bundler', '2.4.22'
+ruby '3.1.2'
 gem 'bootsnap', require: false
+gem 'bundler', '2.4.22'
 gem 'importmap-rails', '1.2.3'
 gem 'jbuilder', '2.11.5'
 gem 'pg', '1.5.4'
 gem 'puma', '5.6.7'
 gem 'rails', '7.0.8'
-gem 'rubocop', '1.58.0', require: false
+gem 'rubocop', '>= 1.0', '< 2.0'
 gem 'sprockets-rails', '3.4.2'
 gem 'sqlite3', '~> 1.4'
 gem 'stimulus-rails', '1.3.0'
