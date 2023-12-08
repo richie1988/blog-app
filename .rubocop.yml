@@ -1,4 +1,8 @@
+# .rubocop.yml
 AllCops:
+  TargetRubyVersion: 3.2.2
+  inherit_gem:
+    rubocop-config: config/rubocop.yml
   NewCops: enable
   Exclude:
     - "db/**/*"
@@ -10,6 +14,10 @@ AllCops:
     - "vendor/**/*"
 
   DisplayCopNames: true
+
+# Add the following configuration to disable Metrics/LineLength for Ruby version
+Metrics/LineLength:
+  Enabled: false
 
 Layout/LineLength:
   Max: 150
@@ -40,7 +48,7 @@ Style/AndOr:
 Style/DefWithParentheses:
   Enabled: false
 Style/FrozenStringLiteralComment:
-  EnforcedStyle: never
+    EnforcedStyle: never
 
 Layout/HashAlignment:
   EnforcedColonStyle: key
