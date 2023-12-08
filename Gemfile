@@ -22,6 +22,7 @@ end
 
 group :test do
   gem 'capybara', '3.39.2'
+  gem 'factory_bot_rails', '6.4.2'
   gem 'selenium-webdriver', '4.15.0'
   gem 'shoulda-matchers', require: false
 end
