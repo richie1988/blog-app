@@ -278,8 +278,7 @@ DEPENDENCIES
   bundler (= 2.4.22)
   capybara (= 3.39.2)
   debug
-  factory_bot (~> 6.4)
-  factory_bot_rails (~> 6.4)
+  factory_bot_rails (= 6.4.2)
   importmap-rails (= 1.2.3)
   jbuilder (= 2.11.5)
   pg (= 1.5.4)
