@@ -16,6 +16,7 @@ gem 'stimulus-rails', '1.3.0'
 gem 'turbo-rails', '1.5.0'
 gem 'tzinfo-data', platforms: %i[mingw mswin x64_mingw]
 
+
 group :development do
   gem 'web-console', '4.2.1'
 end
