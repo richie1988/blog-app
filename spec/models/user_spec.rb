@@ -9,7 +9,5 @@ RSpec.describe User, type: :model do
   # Additional validation tests
   it { is_expected.to have_many(:posts).with_foreign_key('author_id') }
   it { is_expected.to have_many(:comments) }
-  it {
-    is_expected.not_to have_many(:likes)
-  } # Modified to reflect that User does not have a direct association with Likes
+  it { is_expected.to have_one(:like) }  # Change this line to ensure has_one association
 end
