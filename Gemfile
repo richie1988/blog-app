@@ -2,19 +2,18 @@ source 'https://rubygems.org'
 git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
 ruby '3.2.2'
-
-gem 'rubocop', '>= 1.0', '< 2.0'
 gem 'rails', '~> 7.0.8'
+gem 'rubocop', '>= 1.0', '< 2.0'
 gem 'sprockets-rails'
-gem 'sqlite3', '~> 1.4'
-gem 'puma', '~> 5.0'
 gem 'importmap-rails', '1.2.3'
-gem 'turbo-rails'
-gem 'stimulus-rails'
+gem 'puma', '~> 5.0'
+gem 'sqlite3', '~> 1.4'
 gem 'jbuilder'
-gem 'tzinfo-data', platforms: %i[mingw mswin x64_mingw]
+gem 'stimulus-rails'
+gem 'turbo-rails'
 gem 'bootsnap', require: false
-gem 'pg', '1.5.4'  # Keep only this line for pg gem
+gem 'tzinfo-data', platforms: %i[mingw mswin x64_mingw]
+gem 'pg', '1.5.4'
 
 group :development, :test do
   gem 'debug', platforms: %i[mri mingw x64_mingw]
