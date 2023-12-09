@@ -186,7 +186,7 @@ Star this repository if you find it useful!
 
 ## **Acknowledgments** <a name="acknowledgements"></a>
 
-Special thanks to Microverse for making this project possible.
+Special thanks to Microverse Team for making this project possible.
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
