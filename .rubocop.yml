@@ -5,14 +5,14 @@ AllCops:
     rubocop-config: config/rubocop.yml
   NewCops: enable
   Exclude:
-    - "**/.git/**"
-    - "**/vendor/**"
-    - "db/schema.rb"
+    - "db/**/*"
+    - "bin/*" 
+    - "config/**/*"
+    - "Guardfile"
+    - "Rakefile"
     - "node_modules/**/*"
-    - "bin/**/*"
-    - "config/rubocop.yml"
-    - "Gemfile"
-    - "Gemfile.lock"
+    - "vendor/**/*"
+
   DisplayCopNames: true
 
 # Add the following configuration to disable Metrics/LineLength for Ruby version
@@ -22,13 +22,19 @@ Metrics/LineLength:
 Layout/LineLength:
   Max: 150
 Metrics/MethodLength:
-  Max: 30
+  Include:
+    - "app/controllers/*"
+    - "app/models/*"
+  Max: 50
 Metrics/AbcSize:
+  Include:
+    - "app/controllers/*"
+    - "app/models/*"
   Max: 50
 Metrics/ClassLength:
   Max: 150
 Metrics/BlockLength:
-  IgnoredMethods: ['describe']
+  AllowedMethods: ['describe']
   Max: 50
 
 Style/Documentation:

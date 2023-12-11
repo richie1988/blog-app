@@ -10,13 +10,14 @@ A console app that will help us to create posts and delete posts and be able to 
   - [**Built With** ](#built-with-)
     - [**Tech Stack**  ](#tech-stack--)
     - [**Key Features**  ](#key-features--)
-  - [**Live Demo**](#live-demo)
   - [**Getting Started**](#getting-started)
-    - [**Prerequisites**  ](#prerequisites--)
-    - [**Setup** ](#setup-)
-    - [**Install**](#install)
-  - [**Usage**](#usage)
-  - [**Authors** ](#authors-)
+  - [Getting Started](#getting-started-1)
+    - [Prerequisites](#prerequisites)
+    - [Setup](#setup)
+    - [Install](#install)
+    - [💾 Database](#-database)
+    - [Usage](#usage)
+    - [Run tests](#run-tests)
     - [Richard Sikaonga](#richard-sikaonga)
   - [**Future Features** ](#future-features-)
   - [**Contributing** ](#contributing-)
@@ -64,44 +65,75 @@ A console app that will help us to create posts and delete posts and be able to 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 
-## **Live Demo**<a name="live-demo"></a>
+<!-- ## **Live Demo**<a name="live-demo"></a> -->
 
-- Comming soon!
-<!-- Explore the live demo through [our video presentation.](https://drive.google.com/file/d/1ndC-hPDGLc5XxtC7XUq5cj-FibSb7ebi/view?usp=sharing) -->
+<!-- - Comming soon! -->
+<!-- Explore the live demo through [our video presentation.]-->
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 ## **Getting Started**<a name="getting-started"></a>
 
-### **Prerequisites**  <a name="prerequisites"></a>
 
-Before you begin, ensure you have [Ruby 3.2.2 release](https://www.ruby-lang.org/en/downloads/) installed
+## Getting Started
 
-### **Setup** <a name="setup"></a>
+To get a local copy up and running follow these simple example steps.
 
-1. Clone this repository to your local environment:
+### Prerequisites
 
-   ```bash
-   git clone https://github.com/richie1988/blog-app.git
-   ```
+> You need the following tools be installed in your computer:
 
-2. Navigate to the project directory:
+> - [Rails](https://guides.rubyonrails.org/)
+> - [Git](https://www.linode.com/docs/guides/how-to-install-git-on-linux-mac-and-windows/)
+> - [Ruby](https://github.com/microverseinc/curriculum-ruby/blob/main/simple-ruby/articles/ruby_installation_instructions.md)
+> - IDE
+> - Etc
 
-   ```bash
-   cd blog-app
-   ```
+### Setup
 
-### **Install**<a name="install"></a>
+Clone this repository to your desired folder:
 
-- Run `bundle install` to install required gems
+```sh
+  cd my-prefered-folder
+  
+  git clone https://github.com/richie1988/blog-app.git
 
-## **Usage**<a name="usage"></a>
+```
 
-- Run the script with `ruby main.rb` and explore the _Catalogue Of My Thing_ application.
+### Install
 
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
+Install this project with:
 
-## **Authors** <a name="author"></a>
+```sh
+  cd blog-app
+  
+  bundle install
+```
+
+### 💾 Database
+
+Create the databases and run migrations with:
+
+```sh
+rails db:create
+rails db:migrate
+```
+
+### Usage
+
+To run the project, execute the following command:
+
+```sh
+  rails server or rails s
+```
+
+### Run tests
+
+To run tests, run the following command:
+
+```sh
+  rspec spec/
+```
 
 This project was crafted by a dedicated team:
 
@@ -154,7 +186,7 @@ Star this repository if you find it useful!
 
 ## **Acknowledgments** <a name="acknowledgements"></a>
 
-Special thanks to Microverse for making this project possible.
+Special thanks to Microverse Team for making this project possible.
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 

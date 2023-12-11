@@ -1,24 +1,24 @@
 source 'https://rubygems.org'
 git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
-ruby '3.1.4'
-
-gem 'bundler', '2.3.26'
+ruby '3.2.2'
 gem 'bootsnap', require: false
 gem 'importmap-rails', '1.2.3'
-gem 'jbuilder', '2.11.5'
+gem 'jbuilder'
 gem 'pg', '1.5.4'
-gem 'puma', '5.6.7'
-gem 'rails', '7.0.8'
-gem 'rubocop', '1.58.0', require: false
-gem 'sprockets-rails', '3.4.2'
+gem 'puma', '~> 5.0'
+gem 'rails', '~> 7.0.8'
+gem 'rubocop', '>= 1.0', '< 2.0'
+gem 'sprockets-rails'
 gem 'sqlite3', '~> 1.4'
-gem 'stimulus-rails', '1.3.0'
-gem 'turbo-rails', '1.5.0'
+gem 'stimulus-rails'
+gem 'turbo-rails'
 gem 'tzinfo-data', platforms: %i[mingw mswin x64_mingw]
 
 group :development, :test do
   gem 'debug', platforms: %i[mri mingw x64_mingw]
+  gem 'rspec-rails'
+  gem 'shoulda-matchers', '~> 4.0'
 end
 
 group :development do
