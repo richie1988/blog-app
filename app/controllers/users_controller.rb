@@ -1,9 +1,10 @@
+# app/controllers/users_controller.rb
 class UsersController < ApplicationController
   def index
-    # Placeholder for the index view
+    @placeholder_text = 'Users index placeholder'
   end
 
   def show
-    # Placeholder for the show view
+    @placeholder_text = 'User show placeholder'
   end
 end

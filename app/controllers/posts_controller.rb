@@ -1,9 +1,9 @@
 class PostsController < ApplicationController
   def index
-    # Placeholder for the index view
+    @placeholder_text = 'Posts of the user'
   end
 
   def show
-    # Placeholder for the show view
+    @placeholder_text = 'Post with the user id'
   end
 end
