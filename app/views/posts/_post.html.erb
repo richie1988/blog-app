@@ -1,0 +1,9 @@
+<!-- app/views/posts/_post.html.erb -->
+<h1>Single Post</h1>
+<p>Title: <%= post.title %></p>
+<p>Text: <%= post.text %></p>
+<p>Author: <%= post.author.name %></p>
+<p>Comments Counter: <%= post.comments_counter %></p>
+<p>Likes Counter: <%= post.likes_counter %></p>
+
+<%= link_to 'Back to Posts', posts_path %>

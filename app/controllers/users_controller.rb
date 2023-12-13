@@ -1,10 +1,10 @@
-# app/controllers/users_controller.rb
 class UsersController < ApplicationController
   def index
-    @placeholder_text = 'Users index placeholder'
+    @users = User.all
+    puts "DEBUG: #{@users.inspect}" # Add this line
   end
 
   def show
-    @placeholder_text = 'User show placeholder'
+    @user = User.find(params[:id])
   end
 end

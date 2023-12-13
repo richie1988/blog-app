@@ -1,9 +1,10 @@
+# app/controllers/posts_controller.rb
 class PostsController < ApplicationController
   def index
-    @placeholder_text = 'Posts of the user'
+    @posts = Post.all
   end
 
   def show
-    @placeholder_text = 'Post with the user id'
+    @post = Post.find(params[:id])
   end
 end

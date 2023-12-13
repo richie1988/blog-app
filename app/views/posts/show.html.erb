@@ -1,3 +1,41 @@
+<!-- app/views/posts/show.html.erb -->
 <h1>Single Post</h1>
-<p><%= @placeholder_text %></p>
-<p>Find me in app/views/posts/show.html.erb</p>
+<p>Title: <%= @post.title %></p>
+<p>Text: <%= @post.text %></p>
+<p>Author: <%= @post.author.name %></p>
+<p>Comments Counter: <%= @post.comments_counter %></p>
+<p>Likes Counter: <%= @post.likes_counter %></p>
+
+<%= image_tag @post.author.photo, alt: 'Author Photo' if @post.author.photo.present? %>
+
+<h2>Comments</h2>
+<% @post.comments.each do |comment| %>
+  <p>
+    <%= comment.text %>
+    <br>
+    Comment by: <%= comment.user.name %>
+  </p>
+<% end %>
+
+# <%= link_to 'Back to Posts', posts_path %>
+# <article style="border: 1px solid gray">
+#   <div style="display: flex; gap: 24px">
+#     <h3>Post #<%= @post.id %> by <%= @post.author.name %></h3>
+#     <div style="display: flex; gap: 12px;">
+#       <p>Number of Comments: <%= @post.comments_counter %></p>
+#       <p>Number of Likes: <%= @post.likes_counter %></p>
+#     </div>
+#   </div>
+#   <p><%= @post.text %></p>
+# </article>
+
+# <article style="border: 1px solid gray">
+#   <% if @comments.present? %>
+#     <% @comments.each do |comment| %>
+#       <%= render partial: 'comments/comment', locals: { comment: comment } %>
+#     <% end %>
+#   <% else %>
+#     <p>No comments yet.</p>
+#   <% end %>
+# </article>
+
