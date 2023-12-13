@@ -1,4 +1,4 @@
-/*
+/* /*
  * This is a manifest file that'll be compiled into application.css, which will include all the files
  * listed below.
  *
@@ -13,3 +13,28 @@
  *= require_tree .
  *= require_self
  */
+
+/* app/assets/stylesheets/userposts.css */
+
+.user-photo {
+  height: 100px;
+  width: 100px;
+  object-fit: cover;
+  border: 1px solid #ccc;
+}
+
+.user-info {
+  border: 1px solid #ccc;
+  padding: 10px;
+  display: flex;
+  justify-content: space-between;
+  list-style: none;
+}
+
+.user-info a {
+  text-decoration: none;
+}
+
+.comm-like-container {
+  justify-content: space-between;
+}
