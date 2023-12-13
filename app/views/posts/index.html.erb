@@ -1,14 +1,10 @@
-<!-- app/views/posts/index.html.erb -->
-<h1>List of Posts</h1>
-<% if @posts.present? %>
-  <ul>
-    <% @posts.each do |post| %>
-      <li>
-        <%= link_to post.title, post_path(post) %>
-      </li>
-    <% end %>
-  </ul>
-<% else %>
-  <p>No posts found.</p>
+<%= render partial: 'users/user', locals: { user: @user } %>
+<% @posts.each do |post| %>
+  <%= render partial: 'posts/post_with_comments', locals: { post: post } %>
 <% end %>
-<p><%= @placeholder_text %></p>
+
+<% if @user.present? %>
+  <%= link_to 'Pagination', user_path(@user) %>
+<% else %>
+  <p>No posts available for pagination.</p>
+<% end %>

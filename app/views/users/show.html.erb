@@ -1,9 +1,16 @@
-<!-- app/views/users/show.html.erb -->
-<h1>User Details</h1>
-<p>Name: <%= @user.name %></p>
-<p>Bio: <%= @user.bio %></p>
-<p>Post Counter: <%= @user.posts_counter %></p>
-
-<%= image_tag @user.photo, alt: 'User Photo' if @user.photo.present? %>
-
-<%= link_to 'Back to Users', users_path %>
+<%= render partial: 'users/user', locals: { user: @user } %>
+<section id="user-details">
+  <div>
+    <h3>Bio</h3>
+    <p><%= @user.bio %></p>
+  </div>
+  <hr>
+  <section id="posts-container">
+    <% @user.posts.each do |post| %>
+      <%= render partial: 'posts/post', locals: { post: post } %>
+    <% end %>
+  </section>
+  <%= link_to user_user_posts_path(@user) do %>
+    <p>See all posts</p>
+  <% end %>
+</section>

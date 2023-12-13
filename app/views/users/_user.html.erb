@@ -1,8 +1,19 @@
-<!-- app/views/users/_user.html.erb -->
-<h1>User Details</h1>
-<p>Name: <%= user.name %></p>
-<p>Photo: <%= user.photo %></p>
-<p>Bio: <%= user.bio %></p>
-<p>Post Counter: <%= user.post_counter %>
-<img class="user-photo" src="<%= user.photo %>" alt="<%= "#{user.name}'s photo" %>">
-<%= link_to 'Back to Users', users_path %>
+<article>
+  <% if user.present? %>
+    <% if user.photo.present? %>
+      <img class="user-photo" src="<%= user.photo %>" alt="<%= "#{user.name}'s photo" %>">
+    <% else %>
+      <div class="placeholder-box"></div>
+    <% end %>
+
+    <div>
+      <h3 class="user-name"><%= user.name %></h3>
+      <%= link_to user_path(user) do %>
+        <p>Number of Posts: <%= user.posts.count %></p>
+      <% end %>
+    </div>
+    <hr>
+  <% else %>
+    <p>User not found.</p>
+  <% end %>
+</article>
