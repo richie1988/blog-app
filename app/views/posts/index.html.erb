@@ -1,6 +1,8 @@
 <%= render partial: 'users/user', locals: { user: @user } %>
 <% @posts.each do |post| %>
+  <div class="card text-bg-light mb-3" style="max-width: 34rem; padding: 1rem;">
   <%= render partial: 'posts/post_with_comments', locals: { post: post } %>
+  </div>
 <% end %>
 
 <% if @user.present? %>

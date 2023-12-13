@@ -1,7 +1,7 @@
 class UsersController < ApplicationController
   def index
     @users = User.all
-    puts "DEBUG: #{@users.inspect}" # Add this line
+    puts "DEBUG: #{@users.inspect}"
   end
 
   def show

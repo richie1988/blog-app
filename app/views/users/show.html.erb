@@ -1,16 +1,24 @@
 <%= render partial: 'users/user', locals: { user: @user } %>
+
 <section id="user-details">
-  <div>
+
+  <div class="card text-bg-light mb-3" style="max-width: 34rem; padding: 1rem;">
     <h3>Bio</h3>
-    <p><%= @user.bio %></p>
+    <div class="card-body">
+      <p><%= @user.bio %></p>
+    </div>
   </div>
-  <hr>
-  <section id="posts-container">
-    <% @user.posts.each do |post| %>
+
+  <br>
+
+  <% @user.recent_posts.each do |post| %>
+    <div class="card text-bg-light mb-3" style="max-width: 34rem; padding: 1rem;">
       <%= render partial: 'posts/post', locals: { post: post } %>
-    <% end %>
-  </section>
+    </div>
+  <% end %>
+
   <%= link_to user_user_posts_path(@user) do %>
     <p>See all posts</p>
   <% end %>
+
 </section>

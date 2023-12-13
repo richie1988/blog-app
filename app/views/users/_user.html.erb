@@ -1,19 +1,25 @@
-<article>
-  <% if user.present? %>
-    <% if user.photo.present? %>
-      <img class="user-photo" src="<%= user.photo %>" alt="<%= "#{user.name}'s photo" %>">
-    <% else %>
-      <div class="placeholder-box"></div>
-    <% end %>
+<div class="card mb-3" style="max-width: 540px; border: none;">
+  <div class="row g-0">
+    <% if user.present? %>
+      <div class="col-md-4">
+        <% if user.photo.present? %>
+          <img class="user-photo" src="<%= user.photo %>" alt="<%= "#{user.name}'s photo" %>">
+        <% else %>
+          <div class="placeholder-box"></div>
+        <% end %>
+      </div>
 
-    <div>
-      <h3 class="user-name"><%= user.name %></h3>
-      <%= link_to user_path(user) do %>
-        <p>Number of Posts: <%= user.posts.count %></p>
-      <% end %>
-    </div>
-    <hr>
-  <% else %>
-    <p>User not found.</p>
-  <% end %>
-</article>
+      <div class="col-md-8">
+        <div class="user-info">
+          <h3 class="user-name"><%= user.name %></h3>
+          <%= link_to user_path(user) do %>
+            <li>Number of Posts: <%= user.posts.count %></li>
+          <% end %>
+        </div>
+      </div>
+
+    <% else %>
+      <p>User not found.</p>
+    <% end %>
+  </div>
+</div>

@@ -3,8 +3,7 @@
 <article class="post-with-comments">
   <h3 class="post.title">Post <%= post.id %></h3>
   <p class="post.text"><%= post.text %></p>
-
-  <!-- Add your comments rendering logic here -->
+  
   <% post.comments.each do |comment| %>
     <%= render partial: 'comments/comment', locals: { comment: comment } %>
   <% end %>

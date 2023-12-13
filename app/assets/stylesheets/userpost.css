@@ -1,0 +1,19 @@
+/* app/assets/stylesheets/userposts.css */
+
+.user-photo {
+    height: 100px;
+    width: 100px;
+    object-fit: cover;
+    border: 1px solid #ccc;
+  }
+  
+  .user-info {
+    border: 1px solid #ccc;
+    padding: 10px;
+    display: flex;
+    justify-content: space-between;
+    list-style: none;
+  }
+  .user-info :link {
+    text-decoration: none;
+  }
