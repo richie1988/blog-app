@@ -6,4 +6,5 @@
     <p class="no-of-likes">Likes: <%= post.likes_counter %></p>
   </div>
   <hr>
+  <%= render 'posts/new', user: @user, post: @post %>
 </article>

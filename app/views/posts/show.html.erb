@@ -1,3 +1,5 @@
+<!-- app/views/posts/show.html.erb -->
+
 <div class="card text-bg-light mb-3" style="max-width: 100%; padding: 1rem;">
   <div class="comm-like-container" style="display: flex; gap: 24px">
     <h3>Post <%= @post.id %> by <%= @post.author.name %></h3>
@@ -18,3 +20,10 @@
     <p>No comments yet.</p>
   <% end %>
 </div>
+
+#  <!-- Add the form for creating likes -->
+ <div>
+<%= render 'likes/new', user: @user, post: @post %>
+<%= render 'comments/new', user: @user, post: @post %>
+</div>
+

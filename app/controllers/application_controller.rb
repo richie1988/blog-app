@@ -1,2 +1,11 @@
+# app/controllers/application_controller.rb
 class ApplicationController < ActionController::Base
-end
+    before_action :current_user
+  
+    private
+  
+    def current_user
+      @current_user ||= User.first
+    end
+  end
+  
