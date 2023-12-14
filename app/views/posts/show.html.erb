@@ -1,4 +1,4 @@
-<div class="card text-bg-light mb-3" style="max-width: 60%; padding: 1rem;">
+<div class="card text-bg-light mb-3" style="max-width: 100%; padding: 1rem;">
   <div class="comm-like-container" style="display: flex; gap: 24px">
     <h3>Post <%= @post.id %> by <%= @post.author.name %></h3>
     <div style="display: flex; gap: 12px;">
@@ -9,12 +9,12 @@
   <p><%= @post.text %></p>
 </div>
 
-<div class="card text-bg-light mb-3" style="max-width: 60%; padding: 1rem;">
-  <% if @comments.present? %>
-    <% @comments.each do |comment| %>
-      <%= render partial: 'comments/comment', locals: { comment: comment } %>
-    <% end %>
-  <% else %>
-    <p>No comments yet.</p>
-  <% end %>
+<div class="card text-bg-light mb-3" style="max-width: 100%; padding: 1rem;">
+<% if @post.comments.present? %>
+<% @post.comments.each do |comment| %>
+  <%= render partial: 'comments/comment', locals: { comment: comment } %>
+<% end %>
+<% else %>
+<p>No comments yet.</p>
+<% end %>
 </div>

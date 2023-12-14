@@ -1,7 +1,9 @@
-<div class="card mb-3" style="max-width: 540px; border: none;">
+<!-- app/views/posts/_users.html.erb -->
+
+<div class="card mb-3" style="max-width: 100%; border: none;">
   <div class="row g-0">
     <% if user.present? %>
-      <div class="col-md-4">
+      <div class="col-md-4 photo-box">
         <% if user.photo.present? %>
           <img class="user-photo" src="<%= user.photo %>" alt="<%= "#{user.name}'s photo" %>">
         <% else %>
