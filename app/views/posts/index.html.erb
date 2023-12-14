@@ -1,13 +1,17 @@
 <%= render partial: 'users/user', locals: { user: @user } %>
+
 <% @posts.each do |post| %>
   <div class="card text-bg-light mb-3" style="max-width: 100%; padding: 1rem;">
-    <%= render partial: 'posts/post', locals: { post: post } %>
+    <%= link_to user_post_path(@user, post) do %>
+      <%= render partial: 'posts/post', locals: { post: post } %>
+    <% end %>
   </div>
 <% end %>
+
 <%= will_paginate @posts %>
 
 <% if @user.present? %>
-  <%= link_to '....', user_path(@user) %>
+  <%= link_to '', user_path(@user) %>
 <% else %>
   <p>No posts available for pagination.</p>
 <% end %>
