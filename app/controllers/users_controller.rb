@@ -1,10 +1,10 @@
-# app/controllers/users_controller.rb
 class UsersController < ApplicationController
   def index
-    @placeholder_text = 'Users index placeholder'
+    @users = User.all
   end
 
   def show
-    @placeholder_text = 'User show placeholder'
+    @user = User.find(params[:id])
+    @user_posts = @user.posts.paginate(page: params[:page], per_page: 3)
   end
 end

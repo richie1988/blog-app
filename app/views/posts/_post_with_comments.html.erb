@@ -1,0 +1,17 @@
+<!-- app/views/posts/_post_with_comments.html.erb -->
+
+<article class="post-with-comments">
+  <h3 class="post.title">Post <%= post.id %></h3>
+  <p class="post.text"><%= post.text %></p>
+  
+  <% post.comments.each do |comment| %>
+    <%= render partial: 'comments/comment', locals: { comment: comment } %>
+  <% end %>
+
+  <div class="counts-container" style="display: flex; gap: 12px; float: right;">
+    <p class="no-of-comments">Comments: <%= post.comments_counter %></p>
+    <p class="no-of-likes">Likes: <%= post.likes_counter %></p>
+  </div>
+
+  <hr>
+</article>

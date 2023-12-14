@@ -1,3 +1,13 @@
-<h1>List of Posts</h1>
-<p><%= @placeholder_text %></p>
-<p>Find me in app/views/posts/index.html.erb</p>
+<%= render partial: 'users/user', locals: { user: @user } %>
+<% @posts.each do |post| %>
+  <div class="card text-bg-light mb-3" style="max-width: 100%; padding: 1rem;">
+    <%= render partial: 'posts/post', locals: { post: post } %>
+  </div>
+<% end %>
+<%= will_paginate @posts %>
+
+<% if @user.present? %>
+  <%= link_to '....', user_path(@user) %>
+<% else %>
+  <p>No posts available for pagination.</p>
+<% end %>

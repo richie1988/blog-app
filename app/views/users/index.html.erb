@@ -1,3 +1,4 @@
-<h1>List of Users</h1>
-<p><%= @placeholder_text %></p>
-<p>Find me in app/views/users/index.html.erb</p>
+<!-- app/views/posts/index.html.erb -->
+<section id="users">
+  <%= render partial: 'user', collection: @users %>
+</section>

@@ -15,6 +15,8 @@ gem 'sqlite3', '~> 1.4'
 gem 'stimulus-rails'
 gem 'turbo-rails'
 gem 'tzinfo-data', platforms: %i[mingw mswin x64_mingw]
+gem 'will_paginate'
+gem 'will_paginate-bootstrap'
 
 group :development, :test do
   gem 'debug', platforms: %i[mri mingw x64_mingw]

@@ -1,3 +1,21 @@
-<h1>User Details</h1>
-<p><%= @placeholder_text %></p>
-<p>Find me in app/views/users/show.html.erb</p>
+<!-- app/views/posts/show.html.erb -->
+
+<%= render partial: 'users/user', locals: { user: @user } %>
+
+<section id="user-details">
+  <div class="card text-bg-light mb-3" style="max-width: 100%; padding: 1rem;">
+    <h3>Bio</h3>
+    <div class="card-body">
+      <p><%= @user.bio %></p>
+    </div>
+  </div>
+  <br>
+  <% @user_posts.each do |post| %>
+    <div class="card text-bg-light mb-3" style="max-width: 100%; padding: 1rem;">
+      <%= render partial: 'posts/post', locals: { post: post } %>
+    </div>
+  <% end %>
+  <%= link_to user_user_posts_path(@user) do %>
+    <p>See all posts</p>
+  <% end %>  
+</section>

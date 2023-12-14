@@ -1,9 +1,12 @@
+# app/controllers/posts_controller.rb
 class PostsController < ApplicationController
   def index
-    @placeholder_text = 'Posts of the user'
+    @user = User.find(params[:user_id])
+    @posts = @user.posts.paginate(page: params[:page], per_page: 3)
   end
 
   def show
-    @placeholder_text = 'Post with the user id'
+    @post = Post.find(params[:id])
+    @comments = @post.comments.includes(:user).paginate(page: params[:page], per_page: 5)
   end
 end
