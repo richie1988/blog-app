@@ -1,5 +1,5 @@
-<!-- app/views/posts/new.html.erb -->
-<%= form_with(model: [@current_user, @current_user.posts.build], url: user_posts_path(@current_user)) do |form| %>
+<!-- app/views/posts/_new.html.erb -->
+<%= form_with(model: [@current_user, @post], url: user_posts_path(@current_user)) do |form| %>
   <div>
     <%= form.label :title %>
     <%= form.text_field :title %>

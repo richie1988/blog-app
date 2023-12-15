@@ -12,6 +12,6 @@
     <p class="no-of-comments">Comments: <%= post.comments_counter %></p>
     <p class="no-of-likes">Likes: <%= post.likes_counter %></p>
   </div>
-
+  <%= link_to "Create New Post", new_user_post_path(@user), class: "btn btn-primary" %>
   <hr>
 </article>
