@@ -1,0 +1,6 @@
+# <!-- app/views/likes/new.html.erb -->
+<%= form_with(model: [user, post.likes.build], url: user_post_likes_path(user, post)) do |form| %>
+  <div>
+    <%= form.submit 'Like' %>
+  </div>
+<% end %>
