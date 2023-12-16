@@ -1,11 +1,10 @@
-<!-- app/views/posts/_users.html.erb -->
-
-<div class="card mb-3" style="max-width: 100%; border: none;">
-  <div class="row g-0">
-    <% if user.present? %>
+<!-- app/views/posts/_user.html.erb -->
+<% if user.present? %>
+  <div class="card mb-3" style="max-width: 100%; border: none;">
+    <div class="row g-0">
       <div class="col-md-4 photo-box">
         <% if user.photo.present? %>
-          <img class="user-photo" src="<%= user.photo %>" alt="<%= "#{user.name}'s photo" %>">
+            <img class="user-photo" src="<%= user.photo %>" alt="<%= "#{user.name}'s photo" %>">
         <% else %>
           <div class="placeholder-box"></div>
         <% end %>
@@ -13,15 +12,16 @@
 
       <div class="col-md-8">
         <div class="user-info">
-          <h3 class="user-name"><%= user.name %></h3>
           <%= link_to user_path(user) do %>
-            <li>Number of Posts: <%= user.posts.count %></li>
+            <h3 class="user-name"><%= user.name %></h3>
+          <% end %>
+          <%= link_to user_posts_path(user) do %>
+            <p>Number of Posts: <%= user.posts.count %></p>
           <% end %>
         </div>
       </div>
-
-    <% else %>
-      <p>User not found.</p>
-    <% end %>
+    </div>
   </div>
-</div>
+<% else %>
+  <p>User not found.</p>
+<% end %>

@@ -1,4 +1,5 @@
 # config/routes.rb
+
 Rails.application.routes.draw do
   root 'users#index'
 
@@ -8,4 +9,7 @@ Rails.application.routes.draw do
       resources :likes, only: [:create]
     end
   end
+
+  # Add the following line to define the route for user photos
+  # get 'users/:id/photo', to: 'photos#show', as: 'user_photo'
 end

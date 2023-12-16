@@ -1,4 +1,5 @@
-<!-- app/views/posts/index.html.erb -->
+<!-- app/views/users/index.html.erb -->
 <section id="users">
-  <%= render partial: 'user', collection: @users %>
+  <%= render partial: 'users/user', collection: @users, as: :user %>
 </section>
+
