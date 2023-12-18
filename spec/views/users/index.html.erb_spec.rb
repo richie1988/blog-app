@@ -36,8 +36,6 @@ RSpec.describe 'user_index_path', type: :system do
       end
     end
 
-
-
     it 'I can see the number of posts each user has written.' do
       @users.each do |u|
         expect(page).to have_content('Number of Posts:')

@@ -27,7 +27,6 @@ RSpec.configure do |config|
     end
   end
 
-
   config.include FactoryBot::Syntax::Methods
   # Add this line to include view specs
   config.include RSpec::Rails::ViewRendering

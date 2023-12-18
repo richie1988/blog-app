@@ -35,7 +35,6 @@ RSpec.describe 'User index page', type: :system do
 
     # Martin Add the query to see users posts Below
 
-
     it 'When I click to see all posts, it redirects me to the user\'s post\'s index page.' do
       visit user_path(@user.id)
       # Use `find` instead of `click_on` to make it more robust
