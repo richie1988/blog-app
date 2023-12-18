@@ -33,7 +33,7 @@ RSpec.describe 'User index page', type: :system do
       expect(page).to have_content 'My bio #landry !'
     end
 
-    #Martin Add the query to see users posts Below
+    # Martin Add the query to see users posts Below
 
 
     it 'When I click to see all posts, it redirects me to the user\'s post\'s index page.' do
