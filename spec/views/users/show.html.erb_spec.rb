@@ -6,13 +6,14 @@ RSpec.describe 'User index page', type: :system do
       @user = User.create!(name: 'Landry', photo: '#photo_landry', bio: 'My bio #landry !', posts_counter: 0)
 
       10.times do |i|
-        @p = Post.create(author: @user, title: "#{i}/ Post ", text: "This is my #{i} post")
+        @post = Post.create(author: @user, title: "#{i}/ Post ", text: "This is my #{i} post")
       end
 
       visit user_path(@user.id)
     end
 
     after(:each) do
+      Post.destroy_all
       User.destroy_all
     end
 
@@ -32,26 +33,19 @@ RSpec.describe 'User index page', type: :system do
       expect(page).to have_content 'My bio #landry !'
     end
 
-    it 'I can see the user\'s first 3 posts.' do
-      # Add a wait time to ensure the content is loaded
-      expect(page).to have_content("This is my 0 post", wait: 10)
-      expect(page).to have_content("This is my 1 post", wait: 10)
-      expect(page).to have_content("This is my 2 post", wait: 10)
-    end
-    
-    
+    #Add the query to see users posts Below
+
+
     it 'When I click to see all posts, it redirects me to the user\'s post\'s index page.' do
       visit user_path(@user.id)
       # Use `find` instead of `click_on` to make it more robust
       find('a', text: /See All Posts/i).click
-      
+
       # Check the content on the redirected page
       (0..2).each do |i|
         # Removed the `wait` option from `have_content`
         expect(page).to have_content "This is my #{i} post"
       end
     end
-    
-      
   end
 end

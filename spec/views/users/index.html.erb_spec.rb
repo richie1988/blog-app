@@ -11,7 +11,7 @@ RSpec.describe 'user_index_path', type: :system do
       ]
 
       visit users_path
-    end    
+    end
 
     after(:each) do
       User.destroy_all
@@ -22,7 +22,7 @@ RSpec.describe 'user_index_path', type: :system do
         expect(page).to have_content u.name
       end
     end
-    
+
     it 'I can see the user\'s profile picture', retry: 3 do
       @users.each do |user|
         within(".user-#{user.id} .photo-box") do
@@ -30,13 +30,13 @@ RSpec.describe 'user_index_path', type: :system do
             expect(page).to have_css(".user-photo[src='#{user.photo}']", visible: :all)
           else
             # If there's no photo, check that the placeholder-box is present
-            expect(page).to have_css(".placeholder-box", visible: :all)
+            expect(page).to have_css('.placeholder-box', visible: :all)
           end
         end
       end
     end
-    
-    
+
+
 
     it 'I can see the number of posts each user has written.' do
       @users.each do |u|
@@ -46,7 +46,7 @@ RSpec.describe 'user_index_path', type: :system do
     end
 
     it 'When I click on a user, I am redirected to that user\'s show page.' do
-      first("a", text: @users[0].name).click
+      first('a', text: @users[0].name).click
       expect(page).to have_content @users[0].bio
     end
   end

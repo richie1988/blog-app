@@ -8,4 +8,3 @@
 #       # Add any other attributes you have in your User model
 #     end
 #   end
-  
