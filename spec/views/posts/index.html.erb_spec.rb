@@ -51,4 +51,26 @@ RSpec.describe 'User post index page', type: :system do
     expect(page).to have_css('.pagination')
     expect(page).to have_link('2')
   end
+
+  it 'I can see the user\'s profile picture.' do
+    visit user_posts_path(@user)
+    expect(page).to have_css("img[src='https://unsplash.com/photos/F_-0BxGuVvo']")
+  end
+
+  it 'I can see a post\'s title.' do
+    visit user_posts_path(@user)
+    expect(page).to have_link(href: user_post_path(@user, @post))
+  end
+
+  it 'I can see the first comment on a post.' do
+    visit user_posts_path(@user)
+    expect(page).to have_content(/Comments: \d+/)
+  end
+
+  it 'Redirects to the post\'s show page when I click on a post.' do
+    visit user_posts_path(@user)
+    click_link(href: user_post_path(@user, @post))
+    expect(page).to have_current_path(user_post_path(@user, @post))
+    expect(page).to have_content 'This is my first post'
+  end
 end

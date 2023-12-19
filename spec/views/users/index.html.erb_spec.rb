@@ -1,4 +1,5 @@
 require 'rails_helper'
+
 RSpec.describe 'user_index_path', type: :system do
   describe 'User_index_view' do
     before do
@@ -44,8 +45,12 @@ RSpec.describe 'user_index_path', type: :system do
     end
 
     it 'When I click on a user, I am redirected to that user\'s show page.' do
-      first('a', text: @users[0].name).click
-      expect(page).to have_content @users[0].bio
+      user = @users.first
+      within(".user-#{user.id}") do
+        find('a', text: user.name).click
+      end
+      expect(page).to have_current_path(user_path(user))
+      expect(page).to have_content user.bio
     end
   end
 end

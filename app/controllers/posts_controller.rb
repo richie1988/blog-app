@@ -1,16 +1,15 @@
-# app/controllers/posts_controller.rb
 class PostsController < ApplicationController
   def index
     @user = User.find(params[:user_id])
-    @posts = @user.posts.paginate(page: params[:page], per_page: 3)
+    @posts = @user.posts.includes(:comments).paginate(page: params[:page], per_page: 3)
   end
 
   def show
     @user = User.find(params[:user_id])
-    @post = Post.find_by(id: params[:id])
+    @post = Post.includes(:comments).find_by(id: params[:id])
 
     if @post.nil?
-      # Handle the case when the post is not found, e.g., redirect to an error page
+      # Handle the case when the post is not found
       redirect_to user_posts_path(@user), alert: 'Post not found.'
       return
     end

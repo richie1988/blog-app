@@ -8,15 +8,15 @@
   </div>
   <br>
 
-  <% @user_posts.each do |post| %>
-    <div class="card text-bg-light mb-3" style="max-width: 100%; padding: 1rem;">
-      <%= render partial: 'posts/post', locals: { post: post } %>
-    </div>
-  <% end %>
+<% @user_posts.each do |post| %>
+  <div id="post-<%= post.id %>" class="card text-bg-light mb-3" style="max-width: 100%; padding: 1rem;">
+    <%= render partial: 'posts/post', locals: { post: post } %>
+  </div>
+<% end %>
+
 
   <%= link_to 'Create New Post', new_user_post_path(@user), remote: true %>
+  <br>
 
-  <%= link_to user_posts_path(@user) do %>
-    <p>See all posts</p>
-  <% end %>
+  <%= link_to 'See all posts', user_posts_path(@user), id: 'see-all-posts-link' %>
 </section>
