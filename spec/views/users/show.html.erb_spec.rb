@@ -13,7 +13,6 @@ RSpec.describe 'User index page', type: :system do
     end
 
     after(:each) do
-      Post.destroy_all
       User.destroy_all
     end
 
