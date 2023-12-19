@@ -33,7 +33,11 @@ RSpec.describe 'User index page', type: :system do
       expect(page).to have_content 'My bio #landry !'
     end
 
-    # Martin Add the query to see users posts Below
+    it 'I can see the user\'s first 3 posts.' do
+      expect(page).to have_content('This is my 0 post', wait: 10)
+      expect(page).to have_content('This is my 1 post', wait: 10)
+      expect(page).to have_content('This is my 2 post', wait: 10)
+    end
 
     it 'When I click to see all posts, it redirects me to the user\'s post\'s index page.' do
       visit user_path(@user.id)
