@@ -42,7 +42,7 @@ RSpec.describe 'user_index_path', type: :system do
         expect(page).to have_content('Number of Posts:')
         expect(page).to have_content("Number of Posts: #{u.posts.count}")
       end
-    end 
+    end
 
     it 'When I click on a user, I am redirected to that user\'s show page.' do
       user = @users.first
