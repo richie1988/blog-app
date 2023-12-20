@@ -1,5 +1,9 @@
 # app/models/user.rb
 class User < ApplicationRecord
+  # Include default devise modules. Others available are:
+  # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
+  devise :database_authenticatable, :registerable,
+         :recoverable, :rememberable, :validatable, :confirmable
   has_many :posts, foreign_key: 'author_id', dependent: :destroy
   has_many :comments, dependent: :destroy
   has_one :like, dependent: :destroy
@@ -9,5 +13,17 @@ class User < ApplicationRecord
 
   def recent_posts
     posts.order(created_at: :desc).limit(3)
+  end
+
+  def recent_comments
+    comments.order(created_at: :desc).limit(3)
+  end
+
+  def recent_likes
+    likes.order(created_at: :desc).limit(3)
+  end
+
+  def likes?(post)
+    likes.exists?(post_id: post.id)
   end
 end

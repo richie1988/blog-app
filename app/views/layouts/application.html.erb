@@ -15,10 +15,13 @@
   </head>
 
   <body>
-    <br>
+  <!-- <%= render 'home/header' %> -->
     <div class="custom-container">
       <div class="row justify-content-center">
         <div class="col-12 col-md-12">
+        <% if notice%>
+        <%= render 'layouts/alerts' %>
+        <% end %>
           <br>
           <%= yield %>
         </div>
