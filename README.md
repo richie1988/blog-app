@@ -143,6 +143,11 @@ This project was crafted by a dedicated team:
 - LinkedIn: [Richard Sikaonga](https://www.linkedin.com/in/richard-sikaonga-039940275/)
 - Instagram: [@richiesik](https://www.instagram.com/richiesik/)
 
+👤 **Martin Karugaba**
+- GitHub: [martinkarugaba](https://github.com/martinkarugaba)
+- Twitter: [@martin_karugaba](https://twitter.com/martin_karugaba)
+- LinkedIn: [martinkarugaba](https://www.linkedin.com/in/martinkarugaba/)
+
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 ## **Future Features** <a name="future-features"></a>

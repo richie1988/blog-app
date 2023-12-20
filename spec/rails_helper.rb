@@ -1,5 +1,4 @@
-# This file is copied to spec/ when you run 'rails generate rspec:install'
-# rails_helper.rb or spec_helper.rb
+# rails_helper.rb
 require 'spec_helper'
 ENV['RAILS_ENV'] ||= 'test'
 require_relative '../config/environment'
@@ -8,34 +7,39 @@ require 'rspec/rails'
 
 # Add the following lines to properly configure FactoryBot
 require 'factory_bot'
-FactoryBot.definition_file_paths << File.join(File.dirname(__FILE__), 'factories')
+# Ensure that FactoryBot knows where to find your factories
+FactoryBot.definition_file_paths = [File.expand_path('../factories', __dir__)]
 FactoryBot.find_definitions
 
 # ... (existing configurations)
 
-RSpec.configure do |config_outer|
+RSpec.configure do |config|
   # Remove this line if you're not using ActiveRecord or ActiveRecord fixtures
-  config_outer.fixture_path = Rails.root.join('spec/fixtures')
-  config_outer.order = 'default'
+  config.fixture_path = Rails.root.join('spec/fixtures')
+  config.order = 'default'
 
   # ... (existing configurations)
 
-  Shoulda::Matchers.configure do |config_inner|
-    config_inner.integrate do |with|
+  Shoulda::Matchers.configure do |shoulda_config|
+    shoulda_config.integrate do |with|
       with.test_framework :rspec
       with.library :rails
     end
   end
 
-  # ... (existing configurations)
-
-  config_outer.use_transactional_fixtures = true
-
-  # ... (existing configurations)
-
-  config_outer.infer_spec_type_from_file_location!
+  config.include FactoryBot::Syntax::Methods
+  # Add this line to include view specs
+  config.include RSpec::Rails::ViewRendering
 
   # ... (existing configurations)
 
-  config_outer.filter_rails_from_backtrace!
+  config.use_transactional_fixtures = true
+
+  # ... (existing configurations)
+
+  config.infer_spec_type_from_file_location!
+
+  # ... (existing configurations)
+
+  config.filter_rails_from_backtrace!
 end

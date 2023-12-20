@@ -11,19 +11,21 @@
   <p><%= @post.text %></p>
 </div>
 
-<div class="card text-bg-light mb-3" style="max-width: 100%; padding: 1rem;">
-  <% if @post.comments.present? %>
-    <% @post.comments.each do |comment| %>
+<!-- Box for Each Comment with Spacing -->
+<% if @post.comments.present? %>
+  <% @post.comments.each do |comment| %>
+    <div class="card text-bg-light mb-3" style="max-width: 100%; padding: 1rem; margin-top: 10px; margin-bottom: 10px;">
       <%= render partial: 'comments/comment', locals: { comment: comment } %>
-    <% end %>
-  <% else %>
-    <p>No comments yet.</p>
+    </div>
   <% end %>
-</div>
+<% else %>
+  <div class="card text-bg-light mb-3" style="max-width: 100%; padding: 1rem;">
+    <p>No comments yet.</p>
+  </div>
+<% end %>
 
-  <!-- Add the form for creating likes -->
- <div>
-<%= render 'likes/new', user: @user, post: @post %>
-<%= render 'comments/new', user: @user, post: @post %>
+<!-- Add the form for creating likes -->
+<div>
+  <%= render 'likes/new', user: @user, post: @post %>
+  <%= render 'comments/new', user: @user, post: @post %>
 </div>
-
