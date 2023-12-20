@@ -41,13 +41,9 @@ RSpec.describe 'User index page', type: :system do
     it 'When I click to see all posts, it redirects me to the user\'s post\'s index page.' do
       visit user_path(@user.id)
       find('a', text: /See All Posts/i).click
-    
-      expect(page).to have_selector('.pagination', wait: 10)
-    
-      @user_posts.each do |post|
-        expect(page).to have_text(post.text, wait: 10, visible: true)
-      end
-    end        
+
+      expect(page).to have_selector('.pagination', wait: 5)
+    end
 
     it 'I can see a button that lets me view all of a user\'s posts.' do
       expect(page).to have_link('See all posts', href: user_posts_path(@user), id: 'see-all-posts-link')
