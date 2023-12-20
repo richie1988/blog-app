@@ -5,7 +5,7 @@ RSpec.describe 'User index page', type: :system do
     before(:each) do
       @user = User.create!(name: 'Landry', photo: '#photo_landry', bio: 'My bio #landry !', posts_counter: 0)
 
-      #creating the instance post
+      # creating the instance post
       10.times do |i|
         @post = Post.create(author: @user, title: "#{i}/ Post ", text: "This is my #{i} post")
       end
@@ -39,7 +39,7 @@ RSpec.describe 'User index page', type: :system do
       expect(page).to have_content('This is my 2 post', wait: 10)
     end
 
-    #checking through the users post and  index pages
+    # checking through the users post and  index pages
     it 'When I click to see all posts, it redirects me to the user\'s post\'s index page.' do
       visit user_path(@user.id)
       find('a', text: /See All Posts/i).click
