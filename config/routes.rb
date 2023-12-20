@@ -1,12 +1,7 @@
 # config/routes.rb
 
 Rails.application.routes.draw do
-  devise_for :users
-
-  devise_scope :user do
-    root 'devise/sessions#new'
-  end
-  # root 'users#index'
+  devise_for :users, { registrations: 'devise/sessions#new' }
 
   resources :users, only: [:index, :show] do
     resources :posts, only: [:index, :show, :new, :create] do
