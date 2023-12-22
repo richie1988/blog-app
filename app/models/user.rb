@@ -28,5 +28,5 @@ class User < ApplicationRecord
     likes.exists?(post_id: post.id)
   end
 
-  enum role: [:user, :admin]
+  enum role: %i[user admin]
 end

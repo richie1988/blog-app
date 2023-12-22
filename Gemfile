@@ -4,6 +4,7 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 ruby '3.2.2'
 gem 'activesupport', '7.0.8'
 gem 'bootsnap', require: false
+gem 'cancancan', '~> 3.1'
 gem 'devise', '~> 4.9', '>= 4.9.3'
 gem 'importmap-rails', '1.2.3'
 gem 'jbuilder'
@@ -15,7 +16,6 @@ gem 'rubocop', '>= 1.0', '< 2.0'
 gem 'sprockets-rails'
 gem 'sqlite3', '~> 1.4'
 gem 'stimulus-rails'
-gem 'cancancan', '~> 3.1'
 gem 'turbo-rails'
 gem 'tzinfo-data', platforms: %i[mingw mswin x64_mingw]
 gem 'will_paginate'

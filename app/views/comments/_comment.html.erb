@@ -3,4 +3,9 @@
 <div class="comment">
   <p class="comment-text"><%= comment.text %></p>
   <p><%= comment.user.name %>: <%= comment.text %></p>
+
+  <% if can? :destroy, comment %>
+    <%= button_to 'Delete', user_post_comment_path(@post.author, @post, comment), method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-danger', form: { style: 'display: inline;' } %>
+  <% end %>
 </div>
+

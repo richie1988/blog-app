@@ -19,6 +19,12 @@
     <div class="custom-container">
       <div class="row justify-content-center">
         <div class="col-12 col-md-12">
+              <% if alert = flash[:alert] %>
+        <div class="alert alert-danger" role="alert">
+          <%= alert %>
+                </div>
+        <% end %>
+
         <% if notice%>
         <%= render 'layouts/alerts' %>
         <% end %>

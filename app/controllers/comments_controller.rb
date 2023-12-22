@@ -1,6 +1,7 @@
 # app/controllers/comments_controller.rb
 class CommentsController < ApplicationController
-  before_action :set_post, only: %i[new create]
+  before_action :set_post, only: %i[new create destroy]
+  load_and_authorize_resource
 
   def new
     @user = current_user
@@ -17,6 +18,11 @@ class CommentsController < ApplicationController
     end
   end
 
+  def destroy
+    @comment.destroy
+    redirect_to user_post_path(@comment.post.author, @comment.post), notice: 'Comment deleted successfully.'
+  end
+
   private
 
   def set_post
@@ -27,13 +33,5 @@ class CommentsController < ApplicationController
 
   def comment_params
     params.require(:comment).permit(:text)
-  end
-
-  def destroy
-    @comment = Comment.find(params[:id])
-    authorize! :destroy, @comment
-
-    @comment.destroy
-    redirect_to user_post_path(@comment.post.author, @comment.post), notice: 'Comment deleted successfully.'
   end
 end
