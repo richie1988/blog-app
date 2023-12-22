@@ -1,6 +1,7 @@
 # app/controllers/comments_controller.rb
 class CommentsController < ApplicationController
-  before_action :set_post, only: %i[new create]
+  before_action :set_post, only: %i[new create destroy]
+  load_and_authorize_resource
 
   def new
     @user = current_user
@@ -15,6 +16,11 @@ class CommentsController < ApplicationController
     else
       render partial: 'comments/new', status: :unprocessable_entity
     end
+  end
+
+  def destroy
+    @comment.destroy
+    redirect_to user_post_path(@comment.post.author, @comment.post), notice: 'Comment deleted successfully.'
   end
 
   private

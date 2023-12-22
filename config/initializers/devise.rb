@@ -19,6 +19,12 @@ Devise.setup do |config|
   # ==> Controller configuration
   # Configure the parent class to the devise controllers.
   # config.parent_controller = 'DeviseController'
+  # Skip confirmation in specific environments
+  if Rails.env.development? || Rails.env.test?
+    config.allow_unconfirmed_access_for = nil
+  else
+    config.allow_unconfirmed_access_for = 6.days
+  end
 
   # ==> Mailer Configuration
   # Configure the e-mail address which will be shown in Devise::Mailer,

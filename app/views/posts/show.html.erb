@@ -9,6 +9,7 @@
     </div>
   </div>
   <p><%= @post.text %></p>
+  
 </div>
 
 <!-- Box for Each Comment with Spacing -->
@@ -29,3 +30,4 @@
   <%= render 'likes/new', user: @user, post: @post %>
   <%= render 'comments/new', user: @user, post: @post %>
 </div>
+<%= link_to 'Back to Profile', user_path(@user), class: 'btn' %>

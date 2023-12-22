@@ -1,12 +1,17 @@
-<!-- app/views/posts/_post.html.erb -->
 <article class="post">
   <%= link_to user_post_path(@user, post) do %>
     <h3 class="post.title">Post :<%= post.id %></h3>
     <p class="post.text"><%= post.text %></p>
   <% end %>
+
   <div class="counts-container" style="display: flex; gap: 12px; float: right;">
     <p class="no-of-comments">Comments: <%= post.comments_counter %></p>
     <p class="no-of-likes">Likes: <%= post.likes_counter %></p>
   </div>
+
+  <% if can? :destroy, post %>
+    <%= button_to 'Delete', user_post_path(@user, post), method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-danger', form: { style: 'display: inline;' } %>
+  <% end %>
+
   <hr>
 </article>
