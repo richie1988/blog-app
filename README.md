@@ -1,7 +1,8 @@
-<a name="readme-top"></a>
+
+<a name="Blog-App"></a>
 
 # Blog-App <a name="Blog-App"></a>
-A console app that will help us to create posts and delete posts and be able to see friends posted posts and record Likes and be able to read a whole posted message Bio and see all friends lists.
+A console app that will help us to create posts and delete posts and be able to see friends posted posts and record Likes and be able to read a whole posted message Bio and see all friends lists check there bio and full post and previous post.
 
 ## 📗 Table of Contents <a name="table-of-contents"></a>
 
