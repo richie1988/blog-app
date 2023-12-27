@@ -2,6 +2,9 @@
 
 # Blog-App <a name="Blog-App"></a>
 A console app that will help us to create posts and delete posts and be able to see friends posted posts and record Likes and be able to read a whole posted message Bio and see all friends lists.
+<div style="text-align: center;">
+  <img src="app/assets/images/ShareX_iaNuNR5fWg.png" alt="blog_app" />
+</div>
 
 ## 📗 Table of Contents <a name="table-of-contents"></a>
 

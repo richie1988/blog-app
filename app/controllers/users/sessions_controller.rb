@@ -19,7 +19,7 @@ class Users::SessionsController < Devise::SessionsController
   # protected
   def create
     super do |resource|
-      return redirect_to user_path(resource) if resource.persisted?
+      return redirect_to new_user_registration_path unless resource.persisted?
 
       flash[:alert] = 'Invalid email or password'
     end
@@ -28,4 +28,12 @@ class Users::SessionsController < Devise::SessionsController
   # def configure_sign_in_params
   #   devise_parameter_sanitizer.permit(:sign_in, keys: [:attribute])
   # end
+
+
+
+  protected
+
+  def after_sign_out_path_for(_resource_or_scope)
+    new_user_session_path
+  end
 end
