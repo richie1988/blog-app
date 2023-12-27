@@ -29,8 +29,6 @@ class Users::SessionsController < Devise::SessionsController
   #   devise_parameter_sanitizer.permit(:sign_in, keys: [:attribute])
   # end
 
-
-
   protected
 
   def after_sign_out_path_for(_resource_or_scope)
